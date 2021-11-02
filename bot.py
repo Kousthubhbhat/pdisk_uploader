@@ -23,8 +23,9 @@ bot = Client('pdisk bot',
 @bot.on_message(filters.command('start') & filters.private)
 async def start(bot, message):
     await message.reply(
-        f"**𝗛𝗘𝗟𝗟𝗢🎈{message.chat.first_name}!**\n\n"
-        "𝐈'𝐦 𝐚 𝐏𝐝𝐢𝐬𝐤 𝐔𝐩𝐥𝐨𝐚𝐝𝐞𝐫 𝐛𝐨𝐭. 𝐉𝐮𝐬𝐭 𝐬𝐞𝐧𝐝 𝐦𝐞 𝐥𝐢𝐧𝐤, 𝐟𝐢𝐥𝐞 𝐨𝐫 𝐅𝐮𝐥𝐥 𝐩𝐨𝐬𝐭...\𝐧\𝐧 𝐓𝐡𝐢𝐬 𝐛𝐨𝐭 𝐢𝐬 edited 𝐛𝐲 @jack_sparow119")
+        f"**Hey {message.chat.first_name}!**\n\n"
+        "𝐈'𝐦 𝐚 𝐏𝐝𝐢𝐬𝐤 𝐜𝐨𝐧𝐯𝐞𝐫𝐭𝐞𝐫 𝐛𝐨𝐭. 𝐉𝐮𝐬𝐭 𝐬𝐞𝐧𝐝 𝐦𝐞 𝐚𝐧𝐲 𝐩𝐝𝐢𝐬𝐤 𝐥𝐢𝐧𝐤 𝐢 𝐰𝐢𝐥𝐥 𝐜𝐨𝐧𝐯𝐞𝐫𝐭 𝐭𝐨 𝐲𝐨𝐮𝐫 𝐥𝐢𝐧𝐤\𝐧\𝐧 𝐓𝐡𝐢𝐬 𝐛𝐨𝐭 𝐢𝐬 edited 𝐛𝐲 ✅ @jack_sparow119 
+⚠️ Get Acess @jack_sparow119 ")
 
 
 @bot.on_message(filters.text & filters.private)
@@ -82,7 +83,7 @@ async def get_ptitle(url):
 
 
 async def pdisk_up(link):
-    if ('pdisk' in link or 'kuklink' in link or 'kofilink' in link or 'cofilink' in link or 'bit' in link or 'vdshort' in link or 'Pdisklink' in link or 'Pdisks' in link or 'dplinks.net' in link or 'dplinks' in link):
+    if ('pdisk' in link or 'kuklink' in link or 'kofilink' in link or 'cofilink' in link or 'bit' in link or 'vdshort' in link or 'Pdisklink' in link or 'Pdisks' in link or 'droppx' in link or 'dplinks' in link):
         res = await get_ptitle(link)
         title_pdisk = res[0]
         link = res[1]
