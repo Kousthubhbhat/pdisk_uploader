@@ -38,7 +38,7 @@ async def pdisk_uploader(bot, message):
         pdisk_link = await multi_pdisk_up(new_string)
         await message.reply(f'{pdisk_link}', quote=True)
     except Exception as e:
-        await message.reply(f'Plz send again: {e}', quote=True)
+        await message.reply(f'Error: {e}', quote=True)
 
 
 @bot.on_message(filters.photo & filters.private)
@@ -51,7 +51,7 @@ async def pdisk_uploader(bot, message):
         else:
             await bot.send_photo(message.chat.id, message.photo.file_id, caption=f'{pdisk_link}')
     except Exception as e:
-        await message.reply(f'Plz send again: {e}', quote=True)
+        await message.reply(f'Error: {e}', quote=True)
 
 
 async def get_ptitle(url):
@@ -80,7 +80,7 @@ async def get_ptitle(url):
     v_len = len(v_id)
     v_id = v_id[1:v_len - 2]
 
-    v_url = 'https://pdisks.com/share-video?videoid=' + v_id
+    v_url = 'https://www.pdisks.com/share-video?videoid=' + v_id
     res = [str, v_url]
     return res
 
@@ -100,7 +100,7 @@ async def pdisk_up(link):
     data = dict(data)
     print(data)
     v_id = data['data']['item_id']
-    v_url = 'https://pdisks.com/share-video?videoid=' + v_id
+    v_url = 'https://www.pdisks.com/share-video?videoid=' + v_id
     return (v_url)
 
 
