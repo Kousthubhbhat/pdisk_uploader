@@ -16,7 +16,7 @@ bot = Client('pdisk bot',
              api_id=API_ID,
              api_hash=API_HASH,
              bot_token=BOT_TOKEN,
-             workers=50,
+             workers=100,
              sleep_threshold=0)
 
 
@@ -24,9 +24,13 @@ bot = Client('pdisk bot',
 async def start(bot, message):
     await message.reply(
         f"**Hey {message.chat.first_name}!**\n\n"
-        "𝐈'𝐦 𝐚 𝐏𝐝𝐢𝐬𝐤 𝐜𝐨𝐧𝐯𝐞𝐫𝐭𝐞𝐫 𝐛𝐨𝐭. 𝐉𝐮𝐬𝐭 𝐬𝐞𝐧𝐝 𝐦𝐞 𝐚𝐧𝐲 𝐩𝐝𝐢𝐬𝐤 𝐥𝐢𝐧𝐤 𝐢 𝐰𝐢𝐥𝐥 𝐜𝐨𝐧𝐯𝐞𝐫𝐭 𝐭𝐨 𝐲𝐨𝐮𝐫 𝐥𝐢𝐧𝐤 𝐓𝐡𝐢𝐬 𝐛𝐨𝐭 𝐢𝐬 𝐞𝐝𝐢𝐭𝐞𝐝 𝐛𝐲 ✅ @jack_sparow119 𝐢𝐟 𝐲𝐨𝐮 𝐧𝐞𝐞𝐝 𝐥𝐢𝐤𝐞 𝐭𝐡𝐢𝐬 𝐛𝐨𝐭 𝐜𝐨𝐧𝐭𝐚𝐜𝐭 @𝐣𝐚𝐜𝐤_𝐬𝐩𝐚𝐫𝐨𝐰119")
+        "𝐈'𝐦 𝐚 𝐏𝐝𝐢𝐬𝐤 𝐜𝐨𝐧𝐯𝐞𝐫𝐭𝐞𝐫 𝐛𝐨𝐭. 𝐉𝐮𝐬𝐭 𝐬𝐞𝐧𝐝 𝐦𝐞 𝐚𝐧𝐲 𝐩𝐝𝐢𝐬𝐤 𝐥𝐢𝐧𝐤 𝐢 𝐰𝐢𝐥𝐥 𝐜𝐨𝐧𝐯𝐞𝐫𝐭 𝐭𝐨 𝐲𝐨𝐮𝐫 𝐥𝐢𝐧𝐤 𝐓𝐡𝐢𝐬 𝐛𝐨𝐭 𝐢𝐬 𝐞𝐝𝐢𝐭𝐞𝐝 𝐛𝐲 ✅ @Half_intelligent_2 𝐢𝐟 𝐲𝐨𝐮 𝐧𝐞𝐞𝐝 𝐥𝐢𝐤𝐞 𝐭𝐡𝐢𝐬 𝐛𝐨𝐭 𝐜𝐨𝐧𝐭𝐚𝐜𝐭 @Half_intelligent_2")
 
-
+@bot.on_message (filters.command('login')& filters.private)
+ async def login(bot, message):
+    await message.reply(
+       f"**ask @Half_intelligent_2 he gives you access ✅**
+      
 @bot.on_message(filters.text & filters.private)
 async def pdisk_uploader(bot, message):
     new_string = str(message.text)
@@ -34,7 +38,7 @@ async def pdisk_uploader(bot, message):
         pdisk_link = await multi_pdisk_up(new_string)
         await message.reply(f'{pdisk_link}', quote=True)
     except Exception as e:
-        await message.reply(f'Error: {e}', quote=True)
+        await message.reply(f'Plz send again: {e}', quote=True)
 
 
 @bot.on_message(filters.photo & filters.private)
@@ -47,7 +51,7 @@ async def pdisk_uploader(bot, message):
         else:
             await bot.send_photo(message.chat.id, message.photo.file_id, caption=f'{pdisk_link}')
     except Exception as e:
-        await message.reply(f'Error: {e}', quote=True)
+        await message.reply(f'Plz send again: {e}', quote=True)
 
 
 async def get_ptitle(url):
@@ -76,7 +80,7 @@ async def get_ptitle(url):
     v_len = len(v_id)
     v_id = v_id[1:v_len - 2]
 
-    v_url = 'https://www.pdisks.com/share-video?videoid=' + v_id
+    v_url = 'https://pdisks.com/share-video?videoid=' + v_id
     res = [str, v_url]
     return res
 
@@ -96,7 +100,7 @@ async def pdisk_up(link):
     data = dict(data)
     print(data)
     v_id = data['data']['item_id']
-    v_url = 'https://www.pdisks.com/share-video?videoid=' + v_id
+    v_url = 'https://pdisks.com/share-video?videoid=' + v_id
     return (v_url)
 
 
@@ -146,7 +150,7 @@ async def addFooter(str):
 
 
 
-⭐️JOIN CHANNEL ➡️ t.me/""" + CHANNEL
+**💥JOIN CHANNEL ➡️ t.me/"""** + CHANNEL
     return str + footer
 
 bot.run()
