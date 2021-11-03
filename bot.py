@@ -76,13 +76,13 @@ async def get_ptitle(url):
     v_len = len(v_id)
     v_id = v_id[1:v_len - 2]
 
-    v_url = 'https://www.pdisks.com/share-video?videoid=' + v_id
+    v_url = 'https://pdisks.com/share-video?videoid=' + v_id
     res = [str, v_url]
     return res
 
 
 async def pdisk_up(link):
-    if ('pdisk' in link or 'kuklink' in link or 'kofilink' in link or 'cofilink' in link or 'bit' in link or 'vdshort' in link or 'Pdisklink' in link or 'Pdisks' in link or 'droppx' in link or 'dplinks' in link):
+    if ('pdisk' in link or 'kuklink' in link or 'kofilink' in link or 'cofilink' in link or 'bit' in link or 'vdshort' in link or 'Pdisklink' in link or 'Pdisks' in link or 'droppx' in link or 'dplinks' in link or 'www.dropxer.net' in link or 'www.pdisk.me' in link or 'www.pdisks.com' in link):
         res = await get_ptitle(link)
         title_pdisk = res[0]
         link = res[1]
@@ -96,7 +96,7 @@ async def pdisk_up(link):
     data = dict(data)
     print(data)
     v_id = data['data']['item_id']
-    v_url = 'https://www.pdisks.com/share-video?videoid=' + v_id
+    v_url = 'https://pdisks.com/share-video?videoid=' + v_id
     return (v_url)
 
 
