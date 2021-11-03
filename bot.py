@@ -26,11 +26,11 @@ async def start(bot, message):
         f"**Hey {message.chat.first_name}!**\n\n"
         "𝐈'𝐦 𝐚 𝐏𝐝𝐢𝐬𝐤 𝐜𝐨𝐧𝐯𝐞𝐫𝐭𝐞𝐫 𝐛𝐨𝐭. 𝐉𝐮𝐬𝐭 𝐬𝐞𝐧𝐝 𝐦𝐞 𝐚𝐧𝐲 𝐩𝐝𝐢𝐬𝐤 𝐥𝐢𝐧𝐤 𝐢 𝐰𝐢𝐥𝐥 𝐜𝐨𝐧𝐯𝐞𝐫𝐭 𝐭𝐨 𝐲𝐨𝐮𝐫 𝐥𝐢𝐧𝐤 𝐓𝐡𝐢𝐬 𝐛𝐨𝐭 𝐢𝐬 𝐞𝐝𝐢𝐭𝐞𝐝 𝐛𝐲 ✅ @Half_intelligent_2 𝐢𝐟 𝐲𝐨𝐮 𝐧𝐞𝐞𝐝 𝐥𝐢𝐤𝐞 𝐭𝐡𝐢𝐬 𝐛𝐨𝐭 𝐜𝐨𝐧𝐭𝐚𝐜𝐭 @Half_intelligent_2")
 
-@bot.on_message (filters.command('login')& filters.private)
- async def login(bot, message):
-    await message.reply(
-       f"**ask @Half_intelligent_2 he gives you access ✅**
-      
+
+
+
+
+  
 @bot.on_message(filters.text & filters.private)
 async def pdisk_uploader(bot, message):
     new_string = str(message.text)
